@@ -57,7 +57,8 @@
     {% if FLATTR_ID %}
         <meta name="flattr:id" content="{{ FLATTR_ID }}">
     {% endif %}
-
+    <!-- colorbox -->
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/colorbox.css" rel="stylesheet">
     <!-- Bootstrap -->
     {% if BOOTSTRAP_THEME %}
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" type="text/css"/>
@@ -115,7 +116,6 @@
 
 </head>
 <body>
-
 <div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
     <div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
         <div class="navbar-header">
@@ -216,7 +216,9 @@
 {% include 'includes/footer.html' %}
 
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
-
+<!-- Make sure jquery is loaded first, then load colorbox -->
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.colorbox-min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/load-colorbox.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js"></script>
 
